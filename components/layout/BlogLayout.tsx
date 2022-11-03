@@ -2,6 +2,8 @@ import { FC, PropsWithChildren } from 'react';
 
 import Head from 'next/head'
 import { Footer, Navbar } from '../ui';
+import { Grid } from '@mui/material';
+import { SidebarPanel } from '../ui/SidebarPanel';
 
 
 interface Props extends PropsWithChildren {
@@ -19,15 +21,27 @@ export const BlogLayout: FC<Props> = ({ children, title, description }) => {
       </Head>
 
       <Navbar />
-
+      
       <main style={{
         margin: '80px auto',
         maxWidth: '1400px',
         padding: '0 30px',
         minHeight: '100vh'
       }}>
+      <Grid container spacing={4}>
+        
+        <Grid item xs={12} md={8} lg={9} xl={10}>
         { children }
+        </Grid>
+
+        <Grid item xs={2} sm={4} lg={3} xl={2} sx={{ display: { xs: 'none', md: 'block' } }}>
+          <SidebarPanel />
+        </Grid>
+
+      </Grid>
       </main>
+
+      
 
       <Footer />
     </>

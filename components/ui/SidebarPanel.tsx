@@ -1,29 +1,17 @@
 import { FC } from 'react';
-import { Toolbar, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import { Toolbar, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material';
 import InboxIcon from '@mui/icons-material/InboxOutlined';
 import MailIcon from '@mui/icons-material/EmailOutlined';
 
 
 export const SidebarPanel: FC = () => {
   return (
-    <div>
+    <div style={{ paddingTop: '28px' }}>
       <Toolbar />
+      <Typography variant='h4' mb={1}>Articulos</Typography>
       <Divider />
       <List>
-        {['Home', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+        {['Todos', 'Tecnologias', 'Algoritmos'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>

@@ -18,7 +18,7 @@ export const BlogCard: FC<Props> = ({ blog }) => {
                 <CardMedia 
                 component='img'
                 height='280'
-                image={blog.image}
+                image={blog.image[0]}
                 alt='React'
                 />
                 </CardActionArea>
@@ -26,7 +26,7 @@ export const BlogCard: FC<Props> = ({ blog }) => {
                 </NextLink>
                 <Box p={2}>
                     <Typography variant='h5' textAlign='center' mb={2} fontWeight={700}>{ blog.title }</Typography>
-                    <Typography variant='subtitle1' fontSize={19}>{ blog.description[0].slice(0, 240) }...</Typography>
+                    <Typography variant='subtitle1' fontSize={19}>{ blog.description[0].slice(0, 140) }...</Typography>
                     <Typography variant='subtitle2' my={2} fontSize={16}>en octubre 14, 2022</Typography>
                     <Box display='flex' justifyContent='space-between' alignItems='center' mt={2}>
                         <Box display='flex' alignItems='center' gap={3}>
